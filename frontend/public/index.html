@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Resuno — Analyze Your Resume with AI</title>
+<meta name="description" content="Resuno uses AI to score your resume, check ATS compatibility, match it against job descriptions, and give you actionable improvement suggestions in seconds." />
+<meta name="theme-color" content="#0b0e1a" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Resuno — Analyze Your Resume with AI" />
+<meta property="og:description" content="Get an instant AI-powered resume score, ATS check, and improvement plan." />
+<meta property="og:type" content="website" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%234f46e5%22/><text x=%2250%%22 y=%2266%%22 font-size=%2255%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22sans-serif%22>R</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="white" stroke-width="1.6" opacity="0"/><path d="M6 7h8M6 11h12M6 15h9" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      </span>
+      Resuno
+    </a>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it Works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="analyzer.html" class="btn btn-primary" style="padding:12px 22px; font-size:14px;">Analyze Resume</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+<aside class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <span class="logo" style="font-size:18px;">Resuno</span>
+    <button id="navClose" style="color:#fff; width:36px; height:36px;" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <a href="#features">Features</a>
+  <a href="#how-it-works">How it Works</a>
+  <a href="#faq">FAQ</a>
+  <a href="analyzer.html" class="btn btn-primary btn-block">Analyze Resume</a>
+</aside>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal visible">
+      <span class="eyebrow eyebrow--light"><span class="dot"></span> AI-Powered Resume Intelligence</span>
+      <h1>Analyze Your Resume <span>with AI</span></h1>
+      <p>Resuno reads your resume the way a recruiter and an ATS bot both do — then hands you a clear score, missing keywords, and a step-by-step plan to fix it, all in under a minute.</p>
+      <div class="hero-actions">
+        <a href="analyzer.html" class="btn btn-primary">
+          Analyze Resume
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#how-it-works" class="btn btn-ghost">See How it Works</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>50K+</strong><span>Resumes analyzed</span></div>
+        <div><strong>93%</strong><span>ATS pass improvement</span></div>
+        <div><strong>&lt; 30s</strong><span>Average analysis time</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal visible">
+      <div class="float-badge glass badge-score">
+        <div class="badge-ring"></div>
+        <div><strong>92/100</strong><span>Resume Score</span></div>
+      </div>
+      <div class="float-badge glass badge-ats">
+        <div class="badge-ring"></div>
+        <div><strong>88%</strong><span>ATS Match</span></div>
+      </div>
+      <div class="scan-card">
+        <div class="scan-avatar"></div>
+        <div class="scan-line-block w-60"></div>
+        <div class="scan-line-block w-40"></div>
+        <div class="scan-block-gap"></div>
+        <div class="scan-line-block w-90"></div>
+        <div class="scan-line-block w-75"></div>
+        <div class="scan-line-block w-60"></div>
+        <div class="scan-block-gap"></div>
+        <div class="scan-line-block w-90"></div>
+        <div class="scan-line-block w-40"></div>
+        <div class="scan-line-block w-75"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section class="trust-bar">
+  <div class="container">
+    <p>Trusted by candidates hired at</p>
+    <div class="trust-logos">
+      <span>Nimbus</span><span>Orbital</span><span>Fernway</span><span>Cobalt&nbsp;Labs</span><span>Harborline</span><span>Quinta</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Features</span>
+      <h2>Everything a job search needs, in one scan</h2>
+      <p>Resuno doesn't just proofread — it evaluates your resume the way hiring systems and hiring managers actually do.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Instant Resume Score</h3>
+        <p>Get a 0–100 quality score benchmarked against strong resumes in your target role.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 12l2.5 2.5L16 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>ATS Compatibility Check</h3>
+        <p>See exactly how applicant tracking systems will parse your formatting, sections, and keywords.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 17V7a2 2 0 012-2h6l4 4v8a2 2 0 01-2 2H6a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 13l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Job Description Match</h3>
+        <p>Paste any job posting to get a match percentage and the exact gaps holding your application back.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.4 5.4L20 9.3l-4 4 1 5.7L12 16.8 7 19l1-5.7-4-4 5.6-.9L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3>Skills Gap Analysis</h3>
+        <p>Discover which in-demand skills are already showcased — and which ones are quietly missing.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Section-by-Section Review</h3>
+        <p>Contact, summary, experience, education, and skills — each scored and reviewed individually.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3>AI Improvement Suggestions</h3>
+        <p>Specific, actionable rewrites and additions — not generic tips you've already read a hundred times.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section section-alt" id="how-it-works">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Process</span>
+      <h2>From upload to insight in three steps</h2>
+      <p>No sign-up walls, no waiting. Drop your file in and Resuno handles the rest.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num"><svg viewBox="0 0 24 24" fill="none"><path d="M12 16V4M7 9l5-5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <span class="step-tag">STEP 01</span>
+        <h3>Upload</h3>
+        <p>Drag and drop your PDF or DOCX resume, and paste a job description if you have one.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.3 6.3l1.4 1.4M16.3 16.3l1.4 1.4M6.3 17.7l1.4-1.4M16.3 7.7l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <span class="step-tag">STEP 02</span>
+        <h3>AI Analysis</h3>
+        <p>Resuno's AI reads your resume like a recruiter and an ATS bot, scoring every section.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v12M6 12l6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <span class="step-tag">STEP 03</span>
+        <h3>Download Report</h3>
+        <p>Get your full dashboard on screen, then download a polished PDF report to track improvements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> FAQ</span>
+      <h2>Questions, answered</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question">Is my resume data stored anywhere?
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><p>No. Your file is processed in memory to extract text, sent securely to the AI for analysis, and then permanently deleted from our server. We never store or share your resume content.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">What file formats are supported?
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><p>Resuno currently supports PDF and DOCX resume files up to 5MB. We recommend exporting from Word or Google Docs as one of these formats for the most accurate parsing.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">Do I need to add a job description?
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><p>It's optional. Without one, Resuno scores your resume against general best practices for your apparent target role. Adding a job description unlocks a tailored match score and keyword gap analysis.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">How accurate is the ATS score?
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><p>The ATS score models the formatting, structure, and keyword patterns that most applicant tracking systems check for. It's a strong directional signal, not a guarantee from any specific vendor's system.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">Is Resuno free to use?
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><p>Yes — every analysis on this demo is free to run. Upload as many versions of your resume as you like while you refine it.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="cta-band reveal">
+    <span class="eyebrow eyebrow--light"><span class="dot"></span> Ready when you are</span>
+    <h2 style="margin-top:16px;">Your next offer starts with a better resume</h2>
+    <p>Upload it now and get your full AI analysis in under 30 seconds.</p>
+    <a href="analyzer.html" class="btn btn-primary">Analyze My Resume</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M6 7h8M6 11h12M6 15h9" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span>
+          Resuno
+        </a>
+        <p>AI-powered resume analysis that helps you write, refine, and land more interviews — one honest score at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="analyzer.html">Resume Analyzer</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How it Works</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Resuno. All rights reserved.</p>
+      <div class="social-row">
+        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.2 4.2 0 00-7.1 3.8A11.9 11.9 0 013 4.9a4.2 4.2 0 001.3 5.6c-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.7 3.3 4.1a4.2 4.2 0 01-1.9.1 4.2 4.2 0 003.9 2.9A8.4 8.4 0 012 18.6a11.9 11.9 0 006.4 1.9c7.7 0 11.9-6.4 11.9-11.9v-.5c.8-.6 1.5-1.3 2-2.1z" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 8.5H3V21h3.5V8.5zM4.7 7a2 2 0 100-4 2 2 0 000 4zM21 13.4V21h-3.5v-7.1c0-1.7-.6-2.9-2.1-2.9-1.2 0-1.9.8-2.2 1.5-.1.3-.1.6-.1 1V21H9.6V8.5H13v1.7c.5-.7 1.3-1.9 3.2-1.9 2.3 0 4.1 1.5 4.1 4.8v.3z" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.2-4.6-1.1-4.6-5a3.9 3.9 0 011-2.7c-.1-.2-.5-1.3.1-2.7 0 0 .9-.3 2.9 1a10 10 0 015.2 0c2-1.3 2.9-1 2.9-1 .6 1.4.2 2.5.1 2.7a3.9 3.9 0 011 2.7c0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0012 2z" fill="currentColor"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
